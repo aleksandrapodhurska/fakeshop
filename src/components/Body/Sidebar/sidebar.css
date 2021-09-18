@@ -1,0 +1,10 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar .link,
+	.sidebar p {
+	margin-bottom: 15px;
+	text-transform: capitalize;
+}

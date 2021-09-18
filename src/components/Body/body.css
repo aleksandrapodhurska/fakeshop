@@ -1,0 +1,23 @@
+.body {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 20vw auto;
+	grid-template-rows: auto;
+	grid-template-areas:
+		'aside section'
+		'aside section';
+}
+
+.body > * {
+	border: 1px solid blueviolet;
+}
+
+aside {
+	grid-area: aside;
+	padding: 20px;
+}
+
+section {
+	grid-area: section;
+	padding: 20px;
+}

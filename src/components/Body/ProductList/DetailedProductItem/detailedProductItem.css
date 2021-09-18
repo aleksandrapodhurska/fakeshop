@@ -1,0 +1,100 @@
+.card-detailed {
+	width: 80%;
+	height: 60%;
+	padding: 25px;
+	margin: 20px auto 0;
+	border: 1px solid violet;
+	display: grid;
+	grid-template-columns: 30% auto;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'image info'
+		'image price';
+	grid-gap: 15px;
+	position: relative;
+}
+
+.back-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.image-detailed {
+	grid-area: image;
+	width: 100%;
+	height: auto;
+}
+
+.image-detailed img {
+	width: 100%;
+	height: auto;
+}
+
+.info-detailed {
+	grid-area: info;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.info-detailed h3 {
+	text-align: center;
+}
+
+.price-area {
+	grid-area: price;
+	width: 50%;
+	height: 100%;
+	border: 1px solid violet;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	align-self: center;
+}
+
+.cart-block {
+	width: 100%;
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.qty-group {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+	.card-detailed {
+		grid-template-columns: 100%;
+		grid-template-rows: fit-content(300px) 30% 20%;
+		grid-template-areas:
+			'info'
+			'image'
+			'price';
+		justify-items: center;
+	}
+
+	.image-detailed {
+		height: 100%;
+	}
+	
+	.image-detailed img {
+		display: block;
+		margin: 0 auto;
+		height: 100%;
+		max-height: 650px;
+		width: auto;
+	}
+
+
+	.price-area {
+		height: 100%;
+	}
+}
