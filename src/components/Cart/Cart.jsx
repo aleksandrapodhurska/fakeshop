@@ -5,7 +5,7 @@ const Cart = ({cartList, setCartList, addToWishList, addCartItem, subtractCartIt
 	return (
 		<div className="card-container">
 			{cartList.map(item => <CartItem key={item.id} item={item} addToWishList={addToWishList} addCartItem={addCartItem} subtractCartItem={subtractCartItem} removeFromCart={removeFromCart}/>)}
-			<button onClick={() => setCartList([])}>Clear</button>
+			<button className="btn-clear" onClick={() => setCartList([])}>Clear</button>
 		</div>
 	)
 }

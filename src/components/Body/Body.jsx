@@ -3,7 +3,6 @@ import { Route, Switch, useRouteMatch, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 import ProductList from "./ProductList/ProductList";
 import Item from './ProductList/Item';
-import DetailedProductItem from "./ProductList/DetailedProductItem/DetailedProductItem";
 
 import "./body.css";
 

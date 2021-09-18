@@ -16,7 +16,7 @@ const Sidebar = () => {
 		<div className="sidebar">
 			<NavLink to={`${url}/productList`} className="link" activeClassName="active">All categories</NavLink>
 			{categories.map(category => {
-				return <NavLink to={`${url}/${category}`} className="link" activeClassName="active">{category}</NavLink>
+				return <NavLink key={category} to={`${url}/${category}`} className="link" activeClassName="active">{category}</NavLink>
 			})}
 		</div>
 	)

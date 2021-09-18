@@ -1,36 +1,65 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom'; 
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { MdFavoriteBorder, MdRemoveShoppingCart } from "react-icons/md";
 
-const CartItem = ({item, addToWishList, addCartItem, subtractCartItem, removeFromCart}) => {
+const CartItem = ({
+	item,
+	addToWishList,
+	addCartItem,
+	subtractCartItem,
+	removeFromCart,
+}) => {
+	const [price, setPrice] = useState(item.price.toFixed(2));
+
 	return (
-		<div>
-			<div className="card">
+		<div className="card">
 			<div className="card-image">
-				<img src={item.image} alt="" />
+				<NavLink to={`/${item.id}`}>
+					<img src={item.image} alt="" />
+				</NavLink>
 			</div>
 			<div className="card-body">
-				<h4 className="card-title">{	item.title.length > 80 ? item.title.slice(0, 66) : item.title}</h4>
-				<p className="card-price"><span>Price:</span> ${item.price}</p>
+				<NavLink to={`/${item.id}`}>
+					<h4 className="card-title">
+						{item.title.length > 80
+							? item.title.slice(0, 66)
+							: item.title}
+					</h4>
+				</NavLink>
 				<div className="qty-group">
-					<button onClick={() => subtractCartItem(item)}>-</button>
+					<button
+						onClick={() => (
+							subtractCartItem(item),
+							setPrice((item.price * item.qty).toFixed(2))
+						)}
+					>
+						-
+					</button>
 					<span className="qty">{item.qty}</span>
-					<button onClick={()=> addCartItem(item)} >+</button>
+					<button
+						onClick={() => (
+							addCartItem(item),
+							setPrice((item.price * item.qty).toFixed(2))
+						)}
+					>
+						+
+					</button>
 				</div>
-			</div>	
-			<div className="btn-block">
-			<NavLink to={`/${item.id}`}>
-				<button
-					className="btn show-more"
-				>
-					Show more
-				</button>
-			</NavLink>
-			<button onClick={() => addToWishList(item)} className="btn wl">Add to WL</button>
-			<button onClick={() => removeFromCart(item)} className="btn add-cart">Remove from Cart</button>
 			</div>
+			<div className="btn-block">
+				<p className="card-price">${price}</p>
+				<button
+					onClick={() => removeFromCart(item)}
+					className="btn add-cart"
+				>
+					<MdRemoveShoppingCart />
+				</button>
+			</div>
+			<button onClick={() => addToWishList(item)} className="btn wl">
+				<MdFavoriteBorder />
+			</button>
 		</div>
-		</div>
-	)
-}
+	);
+};
 
-export default CartItem
+export default CartItem;
