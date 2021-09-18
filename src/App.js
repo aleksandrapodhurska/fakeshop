@@ -78,9 +78,6 @@ const App = () => {
 				</header>
 				<main>
 					<Switch>
-						{/* <Route exact path="/" >
-						<Redirect to="/body"/>
-					</Route> */}
 						<Route
 							path="/body"
 							render={() => (
