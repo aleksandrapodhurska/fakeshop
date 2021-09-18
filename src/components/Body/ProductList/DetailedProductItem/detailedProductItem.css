@@ -11,6 +11,7 @@
 		'image price';
 	grid-gap: 15px;
 	position: relative;
+	border: 1px solid blue;
 }
 
 .back-button {
@@ -38,6 +39,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 20px 25px;
+	border: 1px solid red;
 }
 
 .info-detailed h1 {
@@ -79,6 +81,7 @@
 			'image'
 			'price';
 		justify-items: center;
+		padding: 25px 0;
 	}
 
 	.image-detailed {
@@ -93,8 +96,21 @@
 		width: auto;
 	}
 
+	.info-detailed {
+		padding: 20px 0;
+	}
 
-	.price-area {
-		height: 100%;
+	.info-detailed h1 {
+		font-size: 1.5rem;
+	}
+
+	.back-button {
+		top: 1%;
+		left: 0;
+	}
+
+	.wl {
+		top: 1%;
+		right: 0;
 	}
 }

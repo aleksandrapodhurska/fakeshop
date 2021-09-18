@@ -1,10 +1,21 @@
 .sidebar {
+	height: 100%;
+	padding: 0 15px;
 	display: flex;
-	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	overflow: hidden;
+	overflow-x: scroll;
 }
 
 .sidebar .link,
 	.sidebar p {
-	margin-bottom: 15px;
 	text-transform: capitalize;
+	min-width: fit-content;
+}
+
+.sidebar .link {
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 5px 8px;
 }

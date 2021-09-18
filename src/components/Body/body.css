@@ -1,11 +1,11 @@
 .body {
 	height: 100%;
 	display: grid;
-	grid-template-columns: 20vw auto;
-	grid-template-rows: auto;
+	grid-template-columns: 100%;
+	grid-template-rows: 8vh auto;
 	grid-template-areas:
-		'aside section'
-		'aside section';
+		'aside'
+		'section';
 }
 
 .body > * {
@@ -14,7 +14,7 @@
 
 aside {
 	grid-area: aside;
-	padding: 20px;
+	/* padding: 20px; */
 }
 
 section {
